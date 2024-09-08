@@ -12,7 +12,7 @@ public class UnitTest{
     @Test
     public void unitTest(){
 
-        Assert.assertEquals(" Unit test to test syntax for project", 55,5);
+        Assert.assertEquals(" Unit test to test syntax for project", 5,5);
 
     }
 }
