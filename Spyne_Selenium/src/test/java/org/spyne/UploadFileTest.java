@@ -30,7 +30,7 @@ public class UploadFileTest {
         driver.get(url);
         validateURL(url);
         validateScreenElements();
-
+        uploadImage();
     }
 
     public void validateURL(String input){
@@ -51,6 +51,17 @@ public class UploadFileTest {
         Assert.assertTrue(driver.findElement(By.xpath(xpath_uploadButton)).isDisplayed(), "Checking if upload button is displayed or not");
         Assert.assertTrue(driver.findElement(By.xpath(xpath_testImages)).isDisplayed(), "Checking if demo images is displayed or not");
         Assert.assertTrue(driver.findElement(By.xpath(xpath_headerOptions)).isDisplayed(), "Checking if headers is displayed or not");
+
+    }
+
+
+    public void uploadImage() throws InterruptedException, AWTException {
+        String xpath_uploadButton = "//img[@alt='Upload Icon']/..";
+        String xpathinput = "//input[@type='file']";
+        driver.findElement(By.xpath(xpathinput)).sendKeys("/Users/kumar.praveen/Documents/personal/Persistent/praveenk.jpg");
+
+
+
 
     }
 
