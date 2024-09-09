@@ -1,5 +1,6 @@
 package org.spyne.tests;
 
+import com.aventstack.extentreports.Status;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +16,9 @@ import java.time.Duration;
 
 public class UploadFileTest extends BaseClass {
     @Test
-    public void test1() throws InterruptedException, AWTException {
+    public void test1()  {
+        testList.get().log(Status.INFO, "This step shows usage of log(status, details)");
+        Assert.assertFalse(true);
         WebDriver driver = driverList.get();
         driver.get(url);
         validateURL(driver,url);
@@ -45,7 +48,7 @@ public class UploadFileTest extends BaseClass {
     }
 
 
-    public void uploadImage(WebDriver driver) throws InterruptedException, AWTException {
+    public void uploadImage(WebDriver driver)  {
         String xpath_uploadButton = "//img[@alt='Upload Icon']/..";
         String xpathinput = "//input[@type='file']";
         driver.findElement(By.xpath(xpathinput)).sendKeys(resourcePath + "testValidImage.jpg");
