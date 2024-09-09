@@ -3,7 +3,7 @@
 <suite name="Unit Test Suite">
     <test name="UnitTest">
         <classes>
-             <class name="org.spyne.UnitTest"/>
+             <class name="org.spyne.tests.UnitTest"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

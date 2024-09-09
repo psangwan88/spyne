@@ -3,7 +3,7 @@
 <suite name="Unit Test Suite">
     <test name="UnitTest">
         <classes>
-             <class name="org.spyne.UploadFileTest"/>
+             <class name="org.spyne.tests.UploadFileTest"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
