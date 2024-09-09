@@ -58,7 +58,7 @@ public class UploadFileTest {
     public void uploadImage() throws InterruptedException, AWTException {
         String xpath_uploadButton = "//img[@alt='Upload Icon']/..";
         String xpathinput = "//input[@type='file']";
-        driver.findElement(By.xpath(xpathinput)).sendKeys("/Users/kumar.praveen/Documents/personal/Persistent/praveenk.jpg");
+        driver.findElement(By.xpath(xpathinput)).sendKeys("/Users/admin/Documents/img.jpg");
 
 
 
