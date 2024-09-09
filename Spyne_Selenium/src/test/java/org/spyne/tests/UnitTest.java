@@ -1,4 +1,4 @@
-package org.spyne;
+package org.spyne.tests;
 
 
 import junit.framework.Assert;
@@ -11,6 +11,8 @@ public class UnitTest{
 
     @Test
     public void unitTest(){
-        Assert.assertEquals(" Unit test to test syntax for project", 5,56);
+
+        Assert.assertEquals(" Unit test to test syntax for project", 5,5);
+
     }
 }

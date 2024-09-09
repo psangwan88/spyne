@@ -36,9 +36,14 @@
     <dependency>
       <groupId>com.aventstack</groupId>
       <artifactId>extentreports</artifactId>
-      <version>3.0.0</version>
+      <version>4.1.5</version>
     </dependency>
 
+    <dependency>
+      <groupId>com.opencsv</groupId>
+      <artifactId>opencsv</artifactId>
+      <version>5.7.1</version> <!-- Use the latest version -->
+    </dependency>
     <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-maven -->
     <dependency>
       <groupId>io.qameta.allure</groupId>
@@ -75,6 +80,11 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <resources>
+      <resource>
+        <directory>src/test/resources</directory>
+      </resource>
+    </resources>
   </build>
 
 
