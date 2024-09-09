@@ -1,15 +1,24 @@
 package org.spyne.baseclass;
 
+import com.aventstack.extentreports.reporter.configuration.Theme;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.spyne.constants.Constants;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
+
+import java.lang.reflect.Method;
 
 public class BaseClass implements Constants {
 
-
+    static {
+        htmlReporter.config().setDocumentTitle("Automation Report");
+        htmlReporter.config().setReportName("Extent Report Sample");
+        htmlReporter.config().setTheme(Theme.STANDARD);
+        extentReport.attachReporter(htmlReporter);
+    }
     @BeforeSuite
     public void beforeSuite(){
 
@@ -23,7 +32,8 @@ public class BaseClass implements Constants {
 
     @Parameters({"browser"})
     @BeforeMethod
-    public WebDriver getDriver(@Optional String browser){
+    public WebDriver beforeMethod(ITestResult result, @Optional String browser){
+        extentReport.createTest(result.getMethod().getMethodName());
         driverList.set(launchBrowser(browser));
         return driverList.get();
     }
@@ -63,9 +73,13 @@ public class BaseClass implements Constants {
 
 
     @AfterMethod
-    public void quitDriver(){
+    public  void quitDriver(){
         if(driverList.get() != null)
             driverList.get().quit();
+        flushReport();
     }
 
+    public synchronized void flushReport(){
+        extentReport.flush();
+    }
 }
