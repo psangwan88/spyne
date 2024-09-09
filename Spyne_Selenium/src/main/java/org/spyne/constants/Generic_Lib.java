@@ -1,4 +1,4 @@
-package org.spyne.libs;
+package org.spyne.constants;
 
 import com.opencsv.CSVWriter;
 

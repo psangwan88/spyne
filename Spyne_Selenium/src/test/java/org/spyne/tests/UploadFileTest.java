@@ -18,7 +18,6 @@ public class UploadFileTest extends BaseClass {
     @Test
     public void test1()  {
         testList.get().log(Status.INFO, "This step shows usage of log(status, details)");
-        Assert.assertFalse(true);
         WebDriver driver = driverList.get();
         driver.get(url);
         validateURL(driver,url);
@@ -27,8 +26,7 @@ public class UploadFileTest extends BaseClass {
     }
 
     public void validateURL(WebDriver driver, String input){
-        Assert.assertEquals(driver.getCurrentUrl(), input,"Matching url");
-
+        assertion.get().assertEquals(driver.getCurrentUrl(), input,"Matching url");
     }
 
     public void validateScreenElements(WebDriver driver){
@@ -39,11 +37,11 @@ public class UploadFileTest extends BaseClass {
         String xpath_headerOptions = "//ul[@class='flex gap-3 items-center justify-center h-full']";
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath_logo)));
-        Assert.assertTrue(driver.findElement(By.xpath(xpath_logo)).isDisplayed(), "Checking if logo is displayed or not");
-        Assert.assertTrue(driver.findElement(By.xpath(xpath_uploadBox)).isDisplayed(), "Checking if upload box is displayed or not");
-        Assert.assertTrue(driver.findElement(By.xpath(xpath_uploadButton)).isDisplayed(), "Checking if upload button is displayed or not");
-        Assert.assertTrue(driver.findElement(By.xpath(xpath_testImages)).isDisplayed(), "Checking if demo images is displayed or not");
-        Assert.assertTrue(driver.findElement(By.xpath(xpath_headerOptions)).isDisplayed(), "Checking if headers is displayed or not");
+        assertion.get().assertTrue(driver.findElement(By.xpath(xpath_logo)).isDisplayed(), "Checking if logo is displayed or not");
+        assertion.get().assertTrue(driver.findElement(By.xpath(xpath_uploadBox)).isDisplayed(), "Checking if upload box is displayed or not");
+        assertion.get().assertTrue(driver.findElement(By.xpath(xpath_uploadButton)).isDisplayed(), "Checking if upload button is displayed or not");
+        assertion.get().assertTrue(driver.findElement(By.xpath(xpath_testImages)).isDisplayed(), "Checking if demo images is displayed or not");
+        assertion.get().assertTrue(driver.findElement(By.xpath(xpath_headerOptions)).isDisplayed(), "Checking if headers is displayed or not");
 
     }
 
